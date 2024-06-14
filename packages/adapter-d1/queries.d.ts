@@ -1,0 +1,20 @@
+export declare const CREATE_USER_SQL = "INSERT INTO users (id, name, email, emailVerified, image) VALUES (?, ?, ?, ?, ?)";
+export declare const GET_USER_BY_ID_SQL = "SELECT * FROM users WHERE id = ?";
+export declare const GET_USER_BY_EMAIL_SQL = "SELECT * FROM users WHERE email = ?";
+export declare const GET_USER_BY_ACCOUNTL_SQL = "\n  SELECT u.*\n  FROM users u JOIN accounts a ON a.userId = u.id\n  WHERE a.providerAccountId = ? AND a.provider = ?";
+export declare const UPDATE_USER_BY_ID_SQL = "\n  UPDATE users \n  SET name = ?, email = ?, emailVerified = ?, image = ?\n  WHERE id = ? ";
+export declare const DELETE_USER_SQL = "DELETE FROM users WHERE id = ?";
+export declare const CREATE_SESSION_SQL = "INSERT INTO sessions (id, sessionToken, userId, expires) VALUES (?,?,?,?)";
+export declare const GET_SESSION_BY_TOKEN_SQL = "\n  SELECT id, sessionToken, userId, expires\n  FROM sessions\n  WHERE sessionToken = ?";
+export declare const UPDATE_SESSION_BY_SESSION_TOKEN_SQL = "UPDATE sessions SET expires = ? WHERE sessionToken = ?";
+export declare const DELETE_SESSION_SQL = "DELETE FROM sessions WHERE sessionToken = ?";
+export declare const DELETE_SESSION_BY_USER_ID_SQL = "DELETE FROM sessions WHERE userId = ?";
+export declare const CREATE_ACCOUNT_SQL = "\n  INSERT INTO accounts (\n    id, userId, type, provider, \n    providerAccountId, refresh_token, access_token, \n    expires_at, token_type, scope, id_token, session_state,\n    oauth_token, oauth_token_secret\n  ) \n  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+export declare const GET_ACCOUNT_BY_ID_SQL = "SELECT * FROM accounts WHERE id = ? ";
+export declare const GET_ACCOUNT_BY_PROVIDER_AND_PROVIDER_ACCOUNT_ID_SQL = "SELECT * FROM accounts WHERE provider = ? AND providerAccountId = ?";
+export declare const DELETE_ACCOUNT_BY_PROVIDER_AND_PROVIDER_ACCOUNT_ID_SQL = "DELETE FROM accounts WHERE provider = ? AND providerAccountId = ?";
+export declare const DELETE_ACCOUNT_BY_USER_ID_SQL = "DELETE FROM accounts WHERE userId = ?";
+export declare const GET_VERIFICATION_TOKEN_BY_IDENTIFIER_AND_TOKEN_SQL = "SELECT * FROM verification_tokens WHERE identifier = ? AND token = ?";
+export declare const CREATE_VERIFICATION_TOKEN_SQL = "INSERT INTO verification_tokens (identifier, expires, token) VALUES (?,?,?)";
+export declare const DELETE_VERIFICATION_TOKEN_SQL = "DELETE FROM verification_tokens WHERE identifier = ? and token = ?";
+//# sourceMappingURL=queries.d.ts.map

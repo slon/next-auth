@@ -28,14 +28,14 @@ dist
 
 # Generated files
 .cache-loader
-packages/next-auth/providers
+# packages/next-auth/providers
 # copied from @auth/core
 packages/frameworks-*/**/providers
-packages/*/*.js
-packages/*/*.d.ts
-packages/*/*.d.ts.map
-packages/*/lib
-packages/**/generated
+# packages/*/*.js
+# packages/*/*.d.ts
+# packages/*/*.d.ts.map
+# packages/*/lib
+# packages/**/generated
 .xata*
 
 # Development app
@@ -84,17 +84,17 @@ docs/.next
 docs/manifest.mjs
 
 # Core
-packages/core/src/providers/oauth-types.ts
-packages/core/lib
-packages/core/providers
-packages/core/src/lib/pages/styles.ts
+# packages/core/src/providers/oauth-types.ts
+# packages/core/lib
+# packages/core/providers
+# packages/core/src/lib/pages/styles.ts
 docs/docs/reference/core
 
 # Next.js
-packages/next-auth/lib
-packages/next-auth/providers
+# packages/next-auth/lib
+# packages/next-auth/providers
 # copied from @auth/core
-packages/next-auth/src/providers
+# packages/next-auth/src/providers
 docs/docs/reference/nextjs
 
 # SvelteKit
