@@ -469,19 +469,20 @@ export function SessionProvider(props: SessionProviderProps) {
         ? "authenticated"
         : "unauthenticated",
       async update(data) {
-        if (loading || !session) return
-        setLoading(true)
+        if (!session) return
+
         const newSession = await fetchData<Session>(
           "session",
           __NEXTAUTH,
           logger,
           { req: { body: { csrfToken: await getCsrfToken(), data } } }
         )
-        setLoading(false)
+
         if (newSession) {
           setSession(newSession)
           broadcast.post({ event: "session", data: { trigger: "getSession" } })
         }
+
         return newSession
       },
     }),

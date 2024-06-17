@@ -93,6 +93,7 @@ export default async function session(
       // If JWT not verifiable, make sure the cookie for it is removed and return empty object
       logger.error("JWT_SESSION_ERROR", error as Error)
 
+      response.status = 401
       response.cookies?.push(...sessionStore.clean())
     }
   } else {
